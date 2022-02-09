@@ -1,0 +1,483 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{25D7547F-2197-4C9D-8E2C-613890BD1445}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>HR_System</RootNamespace>
+    <AssemblyName>HR_System</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AdvancedDataGridView, Version=0.1.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ADGV.0.1.0.10\lib\net40\AdvancedDataGridView.dll</HintPath>
+    </Reference>
+    <Reference Include="AxShockwaveFlashObjects, Version=1.0.0.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.AxShockwaveFlashObjects.13.0.4001\lib\net40\AxShockwaveFlashObjects.dll</HintPath>
+    </Reference>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.5.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.5\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="Devart.Data, Version=5.0.2834.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL">
+      <HintPath>..\packages\Devart.Data.5.0.2834\lib\netstandard2.0\Devart.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Devart.Data.MySql, Version=8.20.2042.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL">
+      <HintPath>..\packages\Devart.Data.MySql.8.20.2042\lib\netstandard2.0\Devart.Data.MySql.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelDataReader, Version=3.6.0.0, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelDataReader.3.6.0\lib\net45\ExcelDataReader.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelDataReader.DataSet, Version=3.6.0.0, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelDataReader.DataSet.3.6.0\lib\net35\ExcelDataReader.DataSet.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.14.0.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.14.0\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI2, Version=2.0.2.8, Culture=neutral, PublicKeyToken=e4b9cdd7b4cde4b4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Guna.UI2.WinForms.2.0.2.8\lib\net40\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4, Version=1.2.6.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Compression.LZ4.1.2.6\lib\net46\K4os.Compression.LZ4.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4.Streams, Version=1.2.6.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Compression.LZ4.Streams.1.2.6\lib\net46\K4os.Compression.LZ4.Streams.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Hash.xxHash, Version=1.0.6.0, Culture=neutral, PublicKeyToken=32cd54395057cec3, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Hash.xxHash.1.0.6\lib\net46\K4os.Hash.xxHash.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.1.2.10\lib\2.0\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.WinForms.10.0.40219.1\lib\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Win32.Registry, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Win32.Registry.4.5.0\lib\net461\Microsoft.Win32.Registry.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.28.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.28\lib\net452\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="MySqlConnector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=d33d3e53aa5f8c92, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySqlConnector.2.1.2\lib\net471\MySqlConnector.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=5.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.5.0.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.PerformanceCounter, Version=4.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.PerformanceCounter.4.5.0\lib\net461\System.Diagnostics.PerformanceCounter.dll</HintPath>
+    </Reference>
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.AccessControl, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.AccessControl.4.5.0\lib\net461\System.Security.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Principal.Windows.4.5.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Speech" />
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.1.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.3.0\lib\portable-net45+win8+wp8+wpa81\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Ubiety.Dns.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.28\lib\net452\Ubiety.Dns.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+    <Reference Include="ZstdNet, Version=1.4.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.28\lib\net452\ZstdNet.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Advertisment\adding_nsource.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Advertisment\adding_nsource.Designer.cs">
+      <DependentUpon>adding_nsource.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Advertisment\Uc_Advertisment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Advertisment\Uc_Advertisment.Designer.cs">
+      <DependentUpon>Uc_Advertisment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Applicant\UC_Applicant.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Applicant\UC_Applicant.Designer.cs">
+      <DependentUpon>UC_Applicant.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Branch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Branch.designer.cs">
+      <DependentUpon>Branch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Category.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Category.designer.cs">
+      <DependentUpon>Category.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dapartment\dept_control.cs" />
+    <Compile Include="Dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dashboard.Designer.cs">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="datas\DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="da_layer\userDa.cs" />
+    <Compile Include="Employee\attendview.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Employee\attendview.Designer.cs">
+      <DependentUpon>attendview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\empattend.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Employee\empattend.Designer.cs">
+      <DependentUpon>empattend.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\emp_cont.cs" />
+    <Compile Include="Employee\generalMenu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Employee\generalMenu.Designer.cs">
+      <DependentUpon>generalMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\Refered_by.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employee\Refered_by.Designer.cs">
+      <DependentUpon>Refered_by.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\SalaryEmp.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Employee\SalaryEmp.Designer.cs">
+      <DependentUpon>SalaryEmp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\UC_Employee.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Employee\UC_Employee.Designer.cs">
+      <DependentUpon>UC_Employee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Exam_Section\Add_Result.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Exam_Section\Add_Result.Designer.cs">
+      <DependentUpon>Add_Result.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Exam_Section\Add_Test.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Exam_Section\Add_Test.Designer.cs">
+      <DependentUpon>Add_Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Exam_Section\UC_NewPaper.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Exam_Section\UC_NewPaper.Designer.cs">
+      <DependentUpon>UC_NewPaper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Functional_Designation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Functional_Designation.designer.cs">
+      <DependentUpon>Functional_Designation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helper\DBHelper.cs" />
+    <Compile Include="Personal_Designation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Personal_Designation.designer.cs">
+      <DependentUpon>Personal_Designation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="reportform\empattend.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="reportform\empattend.Designer.cs">
+      <DependentUpon>empattend.cs</DependentUpon>
+    </Compile>
+    <Compile Include="reportform\empreport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="reportform\empreport.Designer.cs">
+      <DependentUpon>empreport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="reportform\EmpSalary.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="reportform\EmpSalary.Designer.cs">
+      <DependentUpon>EmpSalary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="reportform\reportcontrol.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="reportform\reportcontrol.Designer.cs">
+      <DependentUpon>reportcontrol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="reportform\userreport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="reportform\userreport.Designer.cs">
+      <DependentUpon>userreport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="reports\empattend.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>empattend.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="reports\empdetail.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>empdetail.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reports\empsalary.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>empsalary.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reports\user.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>user.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="sd_layer\users.cs" />
+    <Compile Include="Uc_Settings.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Uc_Settings.Designer.cs">
+      <DependentUpon>Uc_Settings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="userdata\changepass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="userdata\changepass.Designer.cs">
+      <DependentUpon>changepass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="userdata\newuser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="userdata\newuser.Designer.cs">
+      <DependentUpon>newuser.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Advertisment\adding_nsource.resx">
+      <DependentUpon>adding_nsource.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Advertisment\Uc_Advertisment.resx">
+      <DependentUpon>Uc_Advertisment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Applicant\UC_Applicant.resx">
+      <DependentUpon>UC_Applicant.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Branch.resx">
+      <DependentUpon>Branch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Category.resx">
+      <DependentUpon>Category.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboard.resx">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employee\attendview.resx">
+      <DependentUpon>attendview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employee\empattend.resx">
+      <DependentUpon>empattend.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employee\generalMenu.resx">
+      <DependentUpon>generalMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employee\Refered_by.resx">
+      <DependentUpon>Refered_by.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employee\SalaryEmp.resx">
+      <DependentUpon>SalaryEmp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employee\UC_Employee.resx">
+      <DependentUpon>UC_Employee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Exam_Section\Add_Result.resx">
+      <DependentUpon>Add_Result.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Exam_Section\Add_Test.resx">
+      <DependentUpon>Add_Test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Exam_Section\UC_NewPaper.resx">
+      <DependentUpon>UC_NewPaper.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Functional_Designation.resx">
+      <DependentUpon>Functional_Designation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Personal_Designation.resx">
+      <DependentUpon>Personal_Designation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="reportform\empattend.resx">
+      <DependentUpon>empattend.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportform\empreport.resx">
+      <DependentUpon>empreport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportform\EmpSalary.resx">
+      <DependentUpon>EmpSalary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportform\reportcontrol.resx">
+      <DependentUpon>reportcontrol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportform\userreport.resx">
+      <DependentUpon>userreport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reports\empattend.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>empattend.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reports\empdetail.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>empdetail.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reports\empsalary.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>empsalary.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reports\user.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>user.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Uc_Settings.resx">
+      <DependentUpon>Uc_Settings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="userdata\changepass.resx">
+      <DependentUpon>changepass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="userdata\newuser.resx">
+      <DependentUpon>newuser.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="datas\DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="datas\DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="datas\DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
